@@ -1,0 +1,86 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+int trigpini =6;
+int echopini =7;
+long deger;
+long cm;
+
+void setup(){
+  lcd.begin(16,2);
+  pinMode(trigpini,OUTPUT);
+  pinMode(echopini,INPUT);
+  lcd.setCursor(0,0);
+  lcd.print("Welcome");
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Checking sensors");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Sensors started");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Checking system");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("System status:");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Arduino Turkiye");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("V1.1 BAKLAVA");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Release 3");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Everything works");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Booting %17");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Booting %46");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Booting %73");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Booting %85");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Booting %99..");
+  delay(2500);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Successful.");
+  delay(2500);
+  lcd.clear();
+}
+
+void loop(){
+  digitalWrite(trigpini,LOW);
+  digitalWrite(trigpini,HIGH);
+  digitalWrite(trigpini,LOW);
+  deger = pulseIn(echopini,HIGH);
+  cm=deger/29/2;
+  
+  lcd.setCursor(6,0);
+  lcd.print(cm);
+  delay(100);
+  lcd.clear();
+  
+}
