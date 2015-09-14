@@ -1,0 +1,28 @@
+/* arduinoturkiye.net LCD TERMOMETRE
+LM35 sensörü ile sıcaklık ölçümü ve LCD ekranda görüntüleme
+*/
+#include <LiquidCrystal.h>
+//Değişkenleri tanımlıyoruz.
+float sicaklik;
+float gerilim;
+int sicaklikPin = A0;
+// LCD bağlantılarımız ile LCDyi başlatıyoruz
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup()
+{
+  //LCDmizin başlangıç ayarı 16 karakter x 2 satır
+  lcd.begin(16, 2);
+}
+void loop()
+{
+  gerilim = analogRead(sicaklikPin);
+  gerilim = (gerilim / 1023) * 5000;
+  sicaklik = gerilim / 10.0;
+  lcd.setCursor(0,0);
+  lcd.print("Sicaklik:");
+  lcd.setCursor(10,0);
+  lcd.print(sicaklik);
+  lcd.setCursor(0,1);
+  lcd.print("Arduino TR");
+  delay(500);
+}
