@@ -1,0 +1,24 @@
+#define LED    13
+#define BUZZER  2
+
+const int analogPin = A5;
+int sensorValue = 0;
+
+void setup(){
+  pinMode(13,OUTPUT);
+  pinMode(2,OUTPUT);
+}
+
+void loop(){
+  sensorValue = analogRead(analogPin);
+  
+  if (sensorValue <= 840){
+    digitalWrite(LED,LOW);
+    digitalWrite(BUZZER,LOW);
+      }
+  else{
+    digitalWrite(LED,HIGH);
+    digitalWrite(BUZZER,HIGH);
+      }
+  delay(1);
+}
