@@ -1,0 +1,31 @@
+void setup() {                
+  // Pinler Çıkış olarak belirleniyor
+  pinMode(10, OUTPUT);       // MAVI LED
+  pinMode(5,OUTPUT);
+}
+void loop() {
+  digitalWrite(10, HIGH);    // LED yanik
+  delay(50);
+  digitalWrite(10,LOW);
+  delay(50);
+  digitalWrite(10, HIGH);    // LED yanik
+  delay(50);
+  digitalWrite(10,LOW);
+  delay(50);
+  digitalWrite(10,HIGH);
+  delay(50);
+  digitalWrite(10,LOW);
+  delay(550);
+  digitalWrite(5,HIGH);
+  delay(50);
+  digitalWrite(5, LOW);
+  delay(50);
+  digitalWrite(5,HIGH);
+  delay(50);
+  digitalWrite(5, LOW);
+  delay(50);
+  digitalWrite(5,HIGH);
+  delay(50);
+  digitalWrite(5,LOW);
+  delay(330);
+}
