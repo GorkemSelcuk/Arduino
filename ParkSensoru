@@ -32,14 +32,14 @@ void loop() {
     digitalWrite(buz,LOW);
   }
 
-  if else ( mesafe <= 50 ) {
+  else if ( mesafe <= 50 ) {
     digitalWrite(yel,HIGH);
     digitalWrite(buz,HIGH);
     delay(500);
     digitalWrite(yel,LOW);
     digitalWrite(buz,LOW);
   }
-  if else ( mesafe <= 75 ) {
+  else if  ( mesafe <= 75 ) {
     digitalWrite(grn,HIGH);
     digitalWrite(buz,HIGH);
     delay(750);
